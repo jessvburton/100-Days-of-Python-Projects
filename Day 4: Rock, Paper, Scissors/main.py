@@ -29,12 +29,8 @@ elif cp == "scissors":
   print(art.s)
 
 # Draw results
-if player1 == "rock" and cp == "rock":
+if player1 == cp:
   print("It's a draw...")
-if player1 == "paper" and cp == "paper":
-  print("It's a draw...")
-if player1 == "scissors" and cp == "scissors":
-  print("It's a draw...")  
 
 # Rock wins
 if player1 == "rock" and cp == "scissors":
