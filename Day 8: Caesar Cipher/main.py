@@ -8,18 +8,17 @@ def caesar(direction, text, shift):
   output_text = ""
   if direction == "decode":
     shift *= -1
-  for l in text:
-    #TODO: What happens if the user enters a number/symbol/space?
-    if l.islower():
-      l_position = alphabet.index(l)
+  for char in text:
+    if char in alphabet:
+      l_position = alphabet.index(char)
       new_position = (l_position + shift) % 26
       output_text += alphabet[new_position]
-    elif l.upper():
-      l_position = alpha.index(l)
+    elif char in alpha:
+      l_position = alpha.index(char)
       new_position = (l_position + shift) % 26
       output_text += alpha[new_position]
-    elif l.isspace():
-      output_text 
+    else:
+      output_text += char
   print(f"The {direction}d text is {output_text}")
 
 print(logo)
@@ -31,7 +30,7 @@ while play == True:
   
   caesar(direction = direction, text = text, shift = shift)
 
-  retry = input("Would you like to go again? 'Y' or 'N'\n")
+  retry = input("Would you like to go again? 'Y' or 'N'\n").upper()
 
   if retry == "N":
     play = False
