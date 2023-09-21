@@ -1,8 +1,7 @@
 import art
 from game_data import data
-from random import randint
-from replit import clear
 from functions import *
+from replit import clear
 
 score = 0
 play = True
