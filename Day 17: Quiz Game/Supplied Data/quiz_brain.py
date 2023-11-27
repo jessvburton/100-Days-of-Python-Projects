@@ -1,7 +1,3 @@
-#TODO: asking the questions
-#TODO: checking if the answer was correct
-#TODO: checking if we're at the end of the quiz
-
 class QuizBrain:
 
     def __init__(self, q_list):
