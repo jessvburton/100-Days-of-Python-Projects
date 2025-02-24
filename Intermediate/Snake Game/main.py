@@ -9,16 +9,23 @@ screen.title("My Snake Game")
 screen.tracer(0)
 
 
-# loading screen / start screen
-loading_screen = True
-while loading_screen:
-    ready = input("Are you ready to start? (y/n): ").lower()
-
-    if ready == 'y' or ready == 'yes':
-        loading_screen = False
+# # loading screen / start screen
+# loading_screen = True
+# while loading_screen:
+#     ready = input("Are you ready to start? (y/n): ").lower()
+#
+#     if ready == 'y' or ready == 'yes':
+#         loading_screen = False
 
 
 snake = Snake()
+
+screen.listen()
+screen.onkey(snake.position_up,"Up")
+screen.onkey(snake.position_down, "Down")
+screen.onkey(snake.position_left, "Left")
+screen.onkey(snake.position_right, "Right")
+
 
 start_game = True
 while start_game:
@@ -28,16 +35,13 @@ while start_game:
     snake.move()
 
 
-
-
-    # screen.exitonclick()
+    screen.exitonclick()
 
 
 
 
 
 
-# TODO: Control the snake
 # TODO: Detect collision with food
 # TODO: Create scoreboard
 # TODO: Detect collision with wall
@@ -47,4 +51,4 @@ while start_game:
 
 
 
-screen.exitonclick()
+# screen.exitonclick()
